@@ -2,7 +2,7 @@ export default [
     {
         key: 'home',
         path: '/home',
-        hideInMenu: true,
+        name: 'Home',
         component: 'Home/Home',
     },
     {
@@ -46,6 +46,12 @@ export default [
         path: '/about-us',
         name: 'About Us',
         component: 'AboutUs/AboutUs',
+    },
+    {
+        key: 'help',
+        path: '/help',
+        name: 'Help',
+        component: 'Help/Help',
     },
     {
         key: 'exception',

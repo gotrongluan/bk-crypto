@@ -6,24 +6,25 @@ import PropTypes from 'prop-types';
 import styles from './Exception.module.scss';
 
 class Exception extends React.PureComponent {
-
     render() {
-        const { errorCode, errorMessage } = this.props;
+        let type = this.props.match.params.type;
+        const mapTypeToMessage = {
+            '404': 'Page not found',
+            '500': 'Internal Server Error',
+            '401': 'Unauthorized',
+        };
+        type = mapTypeToMessage[type] ? type : '404';
+        const message = mapTypeToMessage[type];
         return (
             <div className={styles.parent}>
                 <div className={styles.inlineDiv}>
-                    <RubberBand><div className={styles.errorCode}>{errorCode}</div></RubberBand>
-                    <Bounce right><div className={styles.errorMessage}>Oops! {errorMessage}</div></Bounce>
+                    <RubberBand><div className={styles.errorCode}>{type}</div></RubberBand>
+                    <Bounce right><div className={styles.errorMessage}>Oops! {message}</div></Bounce>
                     <Bounce left><div className={styles.backToHome}><Link to="/">&larr; Home Page</Link></div></Bounce>
                 </div>
             </div>
         )
     }
-}
-
-Exception.propTypes = {
-    errorCode: PropTypes.oneOf([403, 404, 500, 502]),
-    errorMessage: PropTypes.string,
 }
 
 export default Exception;
