@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import Main from './components/MainComponent';
+import { BrowserRouter, Switch, withRouter } from 'react-router-dom';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import RoutesConfig from 'configs/route.config';
+import { toRoute } from 'utils/route';
+// import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Main/>
-        </div>
+        <Header />   
+        <Switch>
+          {RoutesConfig.map(route => toRoute(route))}
+        </Switch>
+        <Footer />
       </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

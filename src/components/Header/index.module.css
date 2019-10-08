@@ -1,0 +1,10 @@
+.header :global(.navbar-dark) {
+  background-color: #000080;
+}
+.header :global(.nav-link) {
+  font-size: 15px;
+}
+.header .homeLink {
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+}

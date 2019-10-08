@@ -1,12 +1,13 @@
 import React from 'react';
-import '../css/footer/footer.css';
+import classNames from 'classnames';
+import styles from './index.module.scss';
 import { Link } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
 
 function Footer(props) {
     return(
-        <div className="footer">
-            <div className="container footer-container">
+        <div className={styles.footer}>
+            <div className={classNames("container", styles.footerContainer)}>
                 <div className="row justify-content-center">
                     <div className="col-md-3 col-xs-12 offset-1">
                         <h2 className="mb-0">Super Node</h2>
@@ -38,7 +39,7 @@ function Footer(props) {
                             SNodeCrypto.com<br />
                         </address>
                     </div>
-                    <div className="col-md-4 col-xs-12 align-self-center social-icons-container">
+                    <div className={classNames("col-md-4", "col-xs-12", "align-self-center", styles.socialIconsContainer)}>
                         <h5>Follow Us</h5>
                         <div>
                             <SocialIcon style={{height: 30, width: 30, margin: 4}} url="https://www.google.com" fgColor="#ffffff"/>

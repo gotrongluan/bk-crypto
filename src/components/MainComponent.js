@@ -6,23 +6,7 @@ import Home from './HomeComponent';
 import About from './AboutUsComponent';
 import { RabbitAlgorithm, AESAlgorithm, RSAAlgorithm } from './AlgorithmComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { postFeedback, loginUser, logoutUser} from '../redux/ActionCreators';
-import { actions } from 'react-redux-form';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-
-const mapStateToProps = state => {
-    return {
-      auth: state.auth
-    }
-}
-
-const mapDispatchToProps = (dispatch) => ({
-  resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
-  postFeedback: (feedback) => dispatch(postFeedback(feedback)),
-  loginUser: (creds) => dispatch(loginUser(creds)),
-  logoutUser: () => dispatch(logoutUser()),
-});
 
 class Main extends Component {
   render() {
@@ -50,4 +34,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default withRouter(Main);
