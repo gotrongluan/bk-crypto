@@ -21,25 +21,25 @@ const asyncComponent = getComponent => {
                     this.setState({
                         errorMess: err.message,
                     });
-                })
+                });
         }
 
         render() {
             const { component: C, errorMess } = this.state;
-            return <LoadingPage />;
-            if (err) {
+            
+            if (errorMess) {
                 return <ErrorPage message={errorMess} />;
             }
             if (C) {
                 return <C {...this.props} />;
             }
-            
+            return <LoadingPage />;
         }
     };
 }
 
 const asyncComponentFromPath = componentPath => {
-    return asyncComponent(() => import(`/pages/${componentPath}`).then(module => module.default));
+    return asyncComponent(() => import(`pages/${componentPath}`).then(module => module.default));
 };
 
 export const toRoute = route => {

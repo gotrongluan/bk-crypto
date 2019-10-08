@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import RoutesConfig from 'configs/route.config';
@@ -21,4 +21,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;

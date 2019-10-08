@@ -1,0 +1,36 @@
+.home {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 100%;
+}
+.home .superNode {
+  font-family: "Indie Flower", cursive;
+  font-size: 22px;
+  font-weight: 400;
+}
+.home .homeSlogan {
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Sniglet", cursive;
+}
+.home .btnsContainer {
+  margin-top: 80px;
+}
+.home .tryLink {
+  border-radius: 0;
+  padding: 20px 33px;
+  font-size: 18px;
+  border: 2px solid;
+  outline: none;
+}
+.home .tryLink:hover {
+  text-decoration: none;
+}
+.home :global(.react-parallax) img {
+  width: 100%;
+}

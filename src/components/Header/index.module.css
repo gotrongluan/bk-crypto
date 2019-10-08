@@ -1,4 +1,4 @@
-.header :global(.navbar-dark) {
+.header {
   background-color: #000080;
 }
 .header :global(.nav-link) {
@@ -7,4 +7,8 @@
 .header .homeLink {
   font-family: "Oswald", sans-serif;
   font-size: 17px;
+}
+.header .dropDown :global(.nav-item) :global(.nav-link) {
+  color: #000080;
+  font-weight: 400;
 }

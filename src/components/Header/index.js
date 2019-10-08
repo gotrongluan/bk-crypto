@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, DropdownMenu, UncontrolledDropdown, DropdownItem, DropdownToggle } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import styles from './index.module.scss';
 import RoutesConfig from 'configs/route.config';
@@ -25,7 +25,7 @@ class Header extends Component {
         if (!route.hideInMenu) {
             if (route.routes) {
                 return (
-                    <UncontrolledDropdown nav inNavbar>
+                    <UncontrolledDropdown nav inNavbar className={styles.dropDown}>
                         <DropdownToggle nav caret>
                             {route.name}
                         </DropdownToggle>
@@ -40,9 +40,11 @@ class Header extends Component {
                                 else
                                     nR = { ...r };
 
-                                <DropdownItem key={nR.key}>
-                                    {this.fromRouteToMenu(nR)}
-                                </DropdownItem>
+                                return (
+                                    <DropdownItem key={nR.key}>
+                                        {this.fromRouteToMenu(nR)}
+                                    </DropdownItem>
+                                );
                             })}
                         </DropdownMenu>
                     </UncontrolledDropdown>
