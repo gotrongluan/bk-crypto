@@ -14,7 +14,7 @@
     "font-awesome": "4.7.0",
     "isutf8": "^2.1.0",
     "jszip": "^3.2.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "prop-types": "15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
